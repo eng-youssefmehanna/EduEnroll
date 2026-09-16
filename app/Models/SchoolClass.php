@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\HasUuid;
 
 class SchoolClass extends Model
 {
+    use hasUuid;
+    
     protected $table = 'school_classes';
     protected $keyType = 'string';
     public $incrementing = false;

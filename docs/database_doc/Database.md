@@ -1,8 +1,15 @@
 # Overview 
  - used uuid across all ids in order to avoid someone enumerating the bigint incremented ids 
  - Admin is seeded
- - This is a single tenant system where each tenant(system adopter: school) hase its own isolated database 
- 
+ - This is a single tenant system where each tenant(system adopter) hase its own isolated database 
+     mental model:  Higher authority (private school grp usually frokm 2 tio 5 schols)
+    → runs one instance
+        → manages multiple schools
+            → each school has classes
+                → each class has students   
+
+- indexes fpr foreign keys not needed , explained through the file
+
 
  # Database Schema
 
@@ -50,3 +57,18 @@ Simpler confirmation modal (just "are you sure?") for:
 
 - **Student** — shows count of enrollments that will be deleted
 - **Course content** — no children, straightforward confirm
+
+
+# Indexes
+
+- Foreign key columns do not carry explicit indexes beyond what the composite 
+unique constraints already create.
+
+- The app's navigation is hierarchically scoped — the admin always enters through 
+a school, then a class, never querying all students system-wide at once. The 
+largest realistic single query is one school's students (~1,500 rows), which 
+MySQL handles with a full table scan in negligible time at this scale.
+
+- Indexes on FK columns would be the correct addition if query patterns changed 
+- for example, a cross-school reporting dashboard filtering all 7,500 students 
+by grade level. That feature does not exist in this version.
