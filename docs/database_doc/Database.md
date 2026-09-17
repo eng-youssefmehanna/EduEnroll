@@ -10,7 +10,38 @@
 
 - indexes fpr foreign keys not needed , explained through the file
 
+## Known Limitations & Scope Decisions
 
+The following limitations are deliberate — they reflect what the 
+project brief specified, not oversights.
+
+__Open registration__
+- Any person can register as a student with no verification that 
+  they actually belong to the school
+- A real system would require the admin to create student accounts 
+  directly, or use an invite code / registration token tied to a 
+  specific school
+- The brief specified open registration — this limitation is accepted 
+  for this scope
+
+__No grade-level enforcement on enrollment__
+- A student can enroll in any course regardless of their class or 
+  grade level
+- Courses have no `class_id` or `grade_level` constraint — they are 
+  a standalone catalog any student can access
+- A real system would link courses to grade levels or classes, 
+  restricting enrollment to students of the matching level
+- The brief specified open enrollment — this limitation is accepted 
+  for this scope
+
+__No enrollment approval flow__
+- Enrollment is instant — one click and the student is enrolled
+- A real system would have an admin approval step before enrollment 
+  is confirmed
+- The brief specified instant enrollment — this limitation is 
+  accepted for this scope  
+
+  
  # Database Schema
 
 __users__
