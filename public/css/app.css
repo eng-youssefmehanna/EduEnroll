@@ -1,0 +1,101 @@
+:root {
+    --accent: #f97316;
+    --dark:   #0f0f0f;
+    --mid:    #1c1c1c;
+}
+
+/* ── Body ── */
+body { background: #f9fafb; }
+
+/* ── Navbar ── */
+.navbar { background: var(--dark) !important; border-bottom: 2px solid var(--accent); }
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -.5px;
+    color: #fff !important;
+}
+.navbar-brand span { color: var(--accent); }
+.nav-link { color: rgba(255,255,255,.75) !important; font-size: .875rem; font-weight: 500; }
+.nav-link:hover { color: #fff !important; }
+.nav-avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: .75rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Hero ── */
+.page-hero {
+    background: var(--dark);
+    padding: 3rem 0 2.75rem;
+    margin-bottom: 2.5rem;
+}
+.page-hero .eyebrow {
+    font-size: .7rem; font-weight: 700;
+    letter-spacing: .15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: .5rem;
+}
+.page-hero h1 {
+    font-size: 2.6rem; font-weight: 900;
+    color: #fff; letter-spacing: -1px;
+    margin-bottom: .5rem; line-height: 1.1;
+}
+.page-hero .sub {
+    color: rgba(255,255,255,.5);
+    font-size: .95rem; margin: 0;
+}
+
+/* ── Cards ── */
+.edu-card {
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    transition: box-shadow .2s, transform .2s;
+}
+.edu-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,.12); transform: translateY(-2px); }
+
+/* ── Icon box ── */
+.icon-box {
+    width: 52px; height: 52px; border-radius: 10px;
+    background: #fff7ed;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.icon-box i { color: var(--accent); font-size: 1.3rem; }
+
+/* ── Buttons ── */
+.btn-accent {
+    background: var(--accent); color: #fff;
+    border: none; font-weight: 700;
+    border-radius: 8px;
+}
+.btn-accent:hover { background: #ea6c0a; color: #fff; }
+
+.btn-dark-solid {
+    background: var(--dark); color: #fff;
+    border: none; font-weight: 700;
+    border-radius: 8px;
+}
+.btn-dark-solid:hover { background: #2a2a2a; color: #fff; }
+
+/* ── Table ── */
+.edu-table thead th {
+    background: #f3f4f6;
+    font-size: .75rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    color: #6b7280; border: none; padding: .9rem 1.25rem;
+}
+.edu-table tbody td { padding: .9rem 1.25rem; border-color: #f3f4f6; vertical-align: middle; }
+.edu-table tbody tr:hover { background: #fafafa; }
+
+/* ── Tags ── */
+.tag {
+    display: inline-block;
+    background: #f3f4f6; color: #374151;
+    font-size: .7rem; font-weight: 600;
+    padding: .25rem .6rem; border-radius: 4px;
+    letter-spacing: .03em;
+}
+.tag-accent { background: #fff7ed; color: var(--accent); }
