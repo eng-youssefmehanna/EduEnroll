@@ -25,6 +25,7 @@
                 <td>{{ $course->max_students ?? 'Unlimited' }}</td>
                 <td>{{ $course->contents->count() }}</td>
                 <td>
+                    <a href="{{ route('courses.contents.index', $course) }}" class="btn btn-sm btn-info">Manage Content</a>
                     <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-sm btn-warning">Edit</a>
                     <form action="{{ route('courses.destroy', $course->id) }}" method="POST" style="display:inline">
                         @csrf
