@@ -16,7 +16,6 @@
         </a>
     </div>
 
-<<<<<<< HEAD
     @if($courses->isEmpty())
         <div class="text-center py-5 text-muted">
             <i class="bi bi-journal-x fs-1 d-block mb-3"></i>
@@ -70,37 +69,4 @@
             </table>
         </div>
     @endif
-=======
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Instructor</th>
-                <th>Max Students</th>
-                <th>Contents</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($courses as $course)
-            <tr>
-                <td>{{ $course->title }}</td>
-                <td>{{ $course->instructor_name }}</td>
-                <td>{{ $course->max_students ?? 'Unlimited' }}</td>
-                <td>{{ $course->contents->count() }}</td>
-                <td>
-                    <a href="{{ route('courses.contents.index', $course) }}" class="btn btn-sm btn-info">Manage Content</a>
-                    <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                    <form action="{{ route('courses.destroy', $course->id) }}" method="POST" style="display:inline">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-sm btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
->>>>>>> 3319af2ead54f2c80c8479404738180b4d9c795a
 @endsection
